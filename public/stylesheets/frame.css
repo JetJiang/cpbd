@@ -1,0 +1,113 @@
+@CHARSET "UTF-8";
+
+html, body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB",
+		"Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun,
+		sans-serif;
+}
+
+body.frame_bg {
+	background-image: url(../images/noise.png), url(../images/1.jpg);
+	background-repeat: repeat;
+	background-size: auto;
+}
+
+body span, a, p, div {
+	font-family: "Lantinghei SC", "Open Sans", Arial, "Hiragino Sans GB",
+		"Microsoft YaHei", "微软雅黑", "STHeiti", "WenQuanYi Micro Hei", SimSun,
+		sans-serif;
+}
+
+header {
+	width: 100%;
+	height: 45px;
+	background: rgba(0, 0, 0, 0.1);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.logo {
+	width: 160px;
+	height: 45px;
+	float: left;
+	background: rgba(0, 0, 0, 0.1);
+	color: #fff;
+	font-size: 16px;
+	text-align: center;
+	vertical-align: middle;
+	line-height: 45px;
+}
+
+.chart {
+	float: left;
+	height: 500px;
+	width: 300%;
+}
+
+#canvas {
+	float: left;
+	width: 100%;
+	height: 500px;
+}
+
+.condition {
+	width: 100%;
+	float: left;
+	padding: 20px;
+	border-bottom:1px solid rgba(0,0,0,0.1);
+}
+
+.datepick_p {
+	float: left;
+	line-height: 35px;
+	vertical-align: middle;
+}
+
+.datepick {
+	height:35px;
+	float: left;
+}
+.import-data{
+	float:right;
+	margin:5px;
+}
+.condition input[type="text"]{
+	float: left;
+	display: block;
+	width: 120px;
+	margin: 0 10px;
+	height: 34px;
+}
+.ltsh input[type="text"]{
+	width:50px;
+}
+.ltsh{
+	margin-left:57px;
+}
+.ltsh2{
+	margin-left:20px;
+}
+.abjb .btn-group{
+	float:left;
+}
+.abjb{
+	margin-left:20px;
+}
+.ma{
+	height:35px;
+	float: left;
+	margin-left:30px;
+}
+.ma p{
+	float:left;
+}
+.ma .btn-group{
+	float:left;
+	margin:0 10px;
+}
+.checkbox{
+	float:left;
+	margin:5px;
+}

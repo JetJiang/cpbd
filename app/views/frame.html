@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>主页</title>
+<link href="/public/bootstrap/css/bootstrap.min.css" rel="stylesheet" >
+<link href="/public/bootstrap-datetimepicker-master/css/bootstrap-datetimepicker.min.css" rel="stylesheet" >
+<link rel="stylesheet" href="/public/stylesheets/frame.css">
+<link rel="stylesheet" href="public/icheck/skins/square/blue.css">
+
+</head>
+<body class="frame_bg">
+<div class="main">
+	<header>
+		<div class="logo">CPBD</div>
+		<a type="button" class="btn btn-success import-data" href="/import">导入数据</a>
+	</header>
+	<section class="condition">
+		<div class="datepick">
+			<p class="datepick_p">时间段：</p>
+			<input id="start" type="text" value="" readonly class="form-control form_datetime " style="background: #fff">
+			<p class="datepick_p">至</p>
+			<input id="end" type="text" value="" readonly class="form-control form_datetime " style="background: #fff">
+		</div>
+		<a type="button" class="btn btn-success" href="javascript:selectdata();">查询</a>
+	</section>
+	<section class="condition">
+		<div class="datepick ltsh">
+			<label class="checkbox"><input type="checkbox" name="iCheck" checked></label>
+			<input size="16" type="text" value="" class="form-control form_input">
+			<p class="datepick_p">&lt;&nbsp;LTSH&nbsp;&lt;</p>
+			<input size="16" type="text" value="" class="form-control form_input">
+		</div>
+		<div class="datepick ltsh ltsh2">
+			<label class="checkbox"><input type="checkbox" name="iCheck" checked></label>
+			<input size="16" type="text" value="" class="form-control form_input">
+			<p class="datepick_p">&lt;&nbsp;QSDD&nbsp;&lt;</p>
+			<input size="16" type="text" value="" class="form-control form_input">
+		</div>
+		<div class="datepick abjb">
+			<label class="checkbox"><input type="checkbox" name="iCheck" checked></label>
+			<!-- ABJB left button -->
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span id="abjb1" >ABJBSALE</span> <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="javascript:void(0);" class="abjb1-item">ABJBCURRENT</a></li>
+			    <li><a href="javascript:void(0);" class="abjb1-item">ABJBTOP</a></li>
+			    <li><a href="javascript:void(0);" class="abjb1-item">ABJBSALE</a></li>
+			    <li><a href="javascript:void(0);" class="abjb1-item">ABJBBUY</a></li>
+			    <li><a href="javascript:void(0);" class="abjb1-item">ABJBBOTTOM</a></li>
+			  </ul>
+			</div>
+			<p class="datepick_p">&nbsp;&nbsp;&lt;&nbsp;&nbsp;</p>
+			<p class="datepick_p">ABJBCURRENT</p>
+			<p class="datepick_p">&nbsp;&nbsp;&lt;&nbsp;&nbsp;</p>
+			<!-- ABJB right button -->
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span id="abjb2" >ABJBTOP</span> <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="javascript:void(0);" class="abjb2-item">ABJBCURRENT</a></li>
+			    <li><a href="javascript:void(0);" class="abjb2-item">ABJBTOP</a></li>
+			    <li><a href="javascript:void(0);" class="abjb2-item">ABJBSALE</a></li>
+			    <li><a href="javascript:void(0);" class="abjb2-item">ABJBBUY</a></li>
+			    <li><a href="javascript:void(0);" class="abjb2-item">ABJBBOTTOM</a></li>
+			  </ul>
+			</div>
+		</div>
+		<div class="ma">
+		
+			<label class="checkbox"><input type="checkbox" name="iCheck" checked></label>
+		
+			<p class="datepick_p">MA3</p>
+			<!-- MA button -->
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span id="ma1" >大于</span> <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="javascript:void(0);" class="ma1-item">大于</a></li>
+			    <li><a href="javascript:void(0);" class="ma1-item">小于</a></li>
+			    <li><a href="javascript:void(0);" class="ma1-item">等于</a></li>
+			  </ul>
+			</div>
+			<p class="datepick_p">MA10</p>
+		</div>
+		<div class="ma">
+		
+			<label class="checkbox"><input type="checkbox" name="iCheck" checked></label>
+			
+			<p class="datepick_p">MA5</p>
+			<!-- MA button -->
+			<div class="btn-group">
+			  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+			    <span id="ma2" >大于</span> <span class="caret"></span>
+			  </button>
+			  <ul class="dropdown-menu">
+			    <li><a href="javascript:void(0);" class="ma2-item">大于</a></li>
+			    <li><a href="javascript:void(0);" class="ma2-item">小于</a></li>
+			    <li><a href="javascript:void(0);" class="ma2-item">等于</a></li>
+			  </ul>
+			</div>
+			<p class="datepick_p">MA21</p>
+		</div>
+	</section>
+	<section class="chart">
+		<canvas id="canvas"></canvas>
+	</section>
+</div>
+
+<script src="/public/Chart.js-master/Chart.js"></script>
+<script src="/public/javascripts/jquery-1.11.3.min.js"></script>
+<script src="/public/javascripts/frame.js"></script>
+<script type="text/javascript" src="/public/bootstrap/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/public/bootstrap-datetimepicker-master/js/bootstrap-datetimepicker.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/public/bootstrap-datetimepicker-master/js/locales/bootstrap-datetimepicker.zh-CN.js" charset="UTF-8"></script>
+<script type="text/javascript" src="/public/icheck/icheck.min.js" charset="UTF-8"></script>
+</body>
+</html>
